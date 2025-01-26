@@ -4,7 +4,7 @@
 
 ## Vista previa
 
-[![Captura de pantalla del proyecto](https://i.postimg.cc/cCcXzCGK/preview.png)](https://postimg.cc/q6zshkR0)
+![Vista previa del sitio](public/readme-preview1.jpg)
 
 ## Tecnologías utilizadas
 
