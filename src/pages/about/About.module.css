@@ -30,14 +30,16 @@
   opacity: .75;
 }
 
-@media screen and (max-width: 850px) {
+/* 848px */
+@media (max-width: 53em) {
   .row {
     grid-template-columns: 1fr;
     align-items: initial;
   }
 }
 
-@media screen and (max-width: 600px) {
+/* 576px */
+@media (max-width: 36em) {
   .section {
     padding: 4rem 2rem 6rem;
   }

@@ -73,13 +73,15 @@ p {
 
 /* RESPONSIVE DESIGN */
 
-@media screen and (max-width: 600px) {
+/* 576px */
+@media (max-width: 36em) {
   p {
     font-size: 1.8rem;
   }
 }
 
-@media screen and (max-width: 340px) {
+/* 340px */
+@media (max-width: 21.25em) {
   html {
     font-size: 55%;
   }

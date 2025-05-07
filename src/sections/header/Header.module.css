@@ -46,7 +46,8 @@
   visibility: hidden;
 }
 
-@media screen and (max-width: 574px) {
+/* 576px */
+@media (max-width: 36em) {
   .header {
     padding: 2rem;
   }

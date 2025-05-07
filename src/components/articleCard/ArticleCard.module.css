@@ -44,7 +44,8 @@
   flex-grow: 1;
 }
 
-@media screen and (max-width: 600px) {
+/* 576px */
+@media (max-width: 36em) {
   .card:hover {
     box-shadow: none;
   }

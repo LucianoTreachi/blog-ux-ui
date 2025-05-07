@@ -27,19 +27,22 @@
   gap: 3rem;
 }
 
-@media screen and (max-width: 1280px) {
+/* 1280px */
+@media (max-width: 80em) {
   .title {
     font-size: 3.4rem;
   }
 }
 
-@media screen and (max-width: 912px) {
+/* 912px */
+@media (max-width: 57em) {
   .articlesContainer {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media screen and (max-width: 600px) {
+/* 576px */
+@media (max-width: 36em) {
   .section {
     padding: 4rem 2rem 6rem;
   }

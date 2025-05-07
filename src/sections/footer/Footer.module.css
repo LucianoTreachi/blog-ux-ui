@@ -18,7 +18,8 @@
   text-align: center;
 }
 
-@media screen and (max-width: 574px) {
+/* 576px */
+@media (max-width: 36em) {
   .footer {
     padding: 4rem 2rem;
   }
