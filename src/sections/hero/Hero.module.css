@@ -4,7 +4,7 @@
 }
 
 .container {
-  max-width: 1400px;
+  max-width: 140rem;
   padding: 4rem 0;
   margin: auto;
   display: grid;
@@ -14,7 +14,7 @@
 }
 
 .title {
-  max-width: 700px;
+  max-width: 70rem;
   font-size: 6rem;
   line-height: 1.2em;
 }
