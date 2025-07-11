@@ -8,13 +8,10 @@
 
 ## Tecnologías utilizadas
 
-- **Vite:** Herramienta de construcción rápida.
-
-- **React 18:** Biblioteca para construir interfaces de usuario interactivas.
-
-- **CSS Modules:** Estilización de forma modular y encapsulada.
-
-- **Cloudinary:** Alojamiento y gestión de imágenes.
+- Vite
+- React 18
+- CSS Modules
+- Cloudinary
 
 ## Explora el Blog
 
