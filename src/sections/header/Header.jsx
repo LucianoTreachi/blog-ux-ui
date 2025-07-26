@@ -29,13 +29,11 @@ export default function Header() {
     <>
       <header className={styles.header}>
         <nav className={styles.nav}>
-          {/* Logo */}
           <Link className={styles.logo} to="/">
             Blog.
           </Link>
 
           <div className={`${styles.menu} ${isOpen && styles.open}`}>
-            {/* Close menu button */}
             <button
               className={styles.closeMenuButton}
               onClick={toggleMenu}
@@ -44,7 +42,6 @@ export default function Header() {
               <AiOutlineClose />
             </button>
 
-            {/* Links */}
             <Link
               className={styles.menuLink}
               to="/sobre-este-blog"
@@ -54,20 +51,17 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* Theme button */}
           <ThemeButton />
 
-          {/* Open menu button */}
           <button
             className={styles.openMenuButton}
             onClick={toggleMenu}
-            aria-label="Menú"
+            aria-label="Abrir Menú"
           >
             <AiOutlineMenu />
           </button>
         </nav>
 
-        {/* Overlay */}
         <div
           className={`${styles.overlay} ${isOpen ? styles.open : ""}`}
           onClick={toggleMenu}
