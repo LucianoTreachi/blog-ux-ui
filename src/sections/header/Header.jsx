@@ -1,14 +1,16 @@
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import ThemeButton from "../../components/themeButton/ThemeButton";
 import styles from "./Header.module.css";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const firstLinkRef = useRef(null);
+  const menuButtonRef = useRef(null);
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
+    setIsOpen((prev) => !prev);
   };
 
   const handleScroll = useCallback(() => {
@@ -19,11 +21,23 @@ export default function Header() {
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [handleScroll]);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      if (isOpen && firstLinkRef.current) {
+        firstLinkRef.current.focus();
+      }
+      if (!isOpen && menuButtonRef.current) {
+        menuButtonRef.current.focus();
+      }
+    }, 50);
+
+    return () => clearTimeout(timeout);
+  }, [isOpen]);
 
   return (
     <header className={styles.header}>
@@ -45,6 +59,7 @@ export default function Header() {
             className={styles.menuLink}
             to="/sobre-este-blog"
             onClick={toggleMenu}
+            ref={firstLinkRef}
           >
             Sobre este blog
           </Link>
@@ -56,6 +71,7 @@ export default function Header() {
           className={styles.openMenuButton}
           onClick={toggleMenu}
           aria-label="Abrir Menú"
+          ref={menuButtonRef}
         >
           <AiOutlineMenu />
         </button>
