@@ -94,11 +94,13 @@
     gap: 3rem;
     padding: 8rem 0;
     touch-action: none;
+    visibility: hidden;
     transition: var(--transition);
   }
 
   .menu.open {
     right: 0;
+    visibility: visible;
   }
 
   .closeMenuButton {
