@@ -26,47 +26,45 @@ export default function Header() {
   }, [handleScroll]);
 
   return (
-    <>
-      <header className={styles.header}>
-        <nav className={styles.nav}>
-          <Link className={styles.logo} to="/">
-            Blog.
-          </Link>
+    <header className={styles.header}>
+      <nav className={styles.nav}>
+        <Link className={styles.logo} to="/">
+          Blog.
+        </Link>
 
-          <div className={`${styles.menu} ${isOpen && styles.open}`}>
-            <button
-              className={styles.closeMenuButton}
-              onClick={toggleMenu}
-              aria-label="Cerrar Menú"
-            >
-              <AiOutlineClose />
-            </button>
-
-            <Link
-              className={styles.menuLink}
-              to="/sobre-este-blog"
-              onClick={toggleMenu}
-            >
-              Sobre este blog
-            </Link>
-          </div>
-
-          <ThemeButton />
-
+        <div className={`${styles.menu} ${isOpen && styles.open}`}>
           <button
-            className={styles.openMenuButton}
+            className={styles.closeMenuButton}
             onClick={toggleMenu}
-            aria-label="Abrir Menú"
+            aria-label="Cerrar Menú"
           >
-            <AiOutlineMenu />
+            <AiOutlineClose />
           </button>
-        </nav>
 
-        <div
-          className={`${styles.overlay} ${isOpen ? styles.open : ""}`}
+          <Link
+            className={styles.menuLink}
+            to="/sobre-este-blog"
+            onClick={toggleMenu}
+          >
+            Sobre este blog
+          </Link>
+        </div>
+
+        <ThemeButton />
+
+        <button
+          className={styles.openMenuButton}
           onClick={toggleMenu}
-        ></div>
-      </header>
-    </>
+          aria-label="Abrir Menú"
+        >
+          <AiOutlineMenu />
+        </button>
+      </nav>
+
+      <div
+        className={`${styles.overlay} ${isOpen ? styles.open : ""}`}
+        onClick={toggleMenu}
+      ></div>
+    </header>
   );
 }
