@@ -7,12 +7,13 @@ import styles from "./Header.module.css";
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const firstLinkRef = useRef(null);
-  const menuButtonRef = useRef(null);
 
+  // Menu
   const toggleMenu = () => {
     setIsOpen((prev) => !prev);
   };
 
+  // Scroll
   const handleScroll = useCallback(() => {
     if (isOpen) {
       setIsOpen(false);
@@ -26,17 +27,14 @@ export default function Header() {
     };
   }, [handleScroll]);
 
+  // Focus
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      if (isOpen && firstLinkRef.current) {
-        firstLinkRef.current.focus();
-      }
-      if (!isOpen && menuButtonRef.current) {
-        menuButtonRef.current.focus();
-      }
-    }, 50);
-
-    return () => clearTimeout(timeout);
+    if (isOpen && firstLinkRef.current) {
+      const timeout = setTimeout(() => {
+        firstLinkRef.current?.focus();
+      }, 30);
+      return () => clearTimeout(timeout);
+    }
   }, [isOpen]);
 
   return (
@@ -71,7 +69,6 @@ export default function Header() {
           className={styles.openMenuButton}
           onClick={toggleMenu}
           aria-label="Abrir Menú"
-          ref={menuButtonRef}
         >
           <AiOutlineMenu />
         </button>
