@@ -32,7 +32,7 @@ export default function Header() {
     if (isOpen && firstLinkRef.current) {
       const timeout = setTimeout(() => {
         firstLinkRef.current?.focus();
-      }, 30);
+      }, 100);
       return () => clearTimeout(timeout);
     }
   }, [isOpen]);
